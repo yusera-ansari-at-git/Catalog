@@ -26,11 +26,11 @@ class _LoginPageState extends State<LoginPage> {
       //     const SnackBar(content: Text('Processing Data')),
       //   );
 
-      // Navigator.pushNamed(context, AppRoutes.Home).then((res){
-      //   setState(() {
-      //     buttonChanged=false;
-      //   });
-      // });
+      Navigator.pushNamed(context, AppRoutes.Home).then((res) {
+        setState(() {
+          buttonChanged = false;
+        });
+      });
     }
     ;
   }
