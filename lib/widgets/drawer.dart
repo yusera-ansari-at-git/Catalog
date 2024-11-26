@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
   final imageUrl =
-      "https://img.freepik.com/premium-vector/cervical-retainer-icon-cartoon-illustration-cervical-retainer-vector-icon-web_96318-30233.jpg?w=1380";
+      "https://img.freepik.com/free-psd/3d-illustration-person-with-long-hair_23-2149436197.jpg?t=st=1732597854~exp=1732601454~hmac=01ae09757e9c53120d97774963650c2c43c1fdc1bd00a6fc62061e8cd52eac32&w=1380";
 
   @override
   Widget build(BuildContext context) {
