@@ -1,6 +1,6 @@
 class Catalog {
   final String? name;
-  final String id;
+  final int id;
   final String image;
   final String color;
   final int price;
@@ -12,24 +12,30 @@ class Catalog {
       this.image = "",
       this.name = "",
       this.price = 0});
+  factory Catalog.fromMap(Map<String, dynamic> map) {
+    return Catalog(
+        id: map["id"],
+        color: map["color"],
+        desc: map["desc"],
+        image: map["image"],
+        name: map["name"],
+        price: map["price"]);
+  }
+  toMap() => {
+        "id": id,
+        "color": color,
+        "desc": desc,
+        "image": image,
+        "name": name,
+        "price": price
+      };
 }
 
 class SubCatalog extends Catalog {
   SubCatalog(id) : super(id: id);
-  myFunc() {
-    if (id.isEmpty) {}
-  }
+  myFunc() {}
 }
 
 class CatalogList {
-  static const List<Catalog> list = [
-    Catalog(
-        id: "178",
-        name: "Luci",
-        desc:
-            "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
-        price: 32,
-        image: "http://dummyimage.com/175x100.png/5fa2dd/ffffff",
-        color: "#dc60ae")
-  ];
+  static List<Catalog>? list;
 }
