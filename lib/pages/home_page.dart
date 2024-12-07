@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
           color: Colors.white,
         ),
       ),
-      backgroundColor: AppThemeData.creamColor,
+      backgroundColor: Theme.of(context).primaryColorLight,
       // appBar: AppBar(
       //   title: Text("Home"),
       // ),

@@ -13,7 +13,7 @@ class HomeDetailPage extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Container(
         padding: EdgeInsets.all(10),
-        color: AppThemeData.creamColor,
+        color: Theme.of(context).primaryColorLight,
         child: OverflowBar(
           spacing: 5,
           alignment: MainAxisAlignment.spaceBetween,
@@ -21,7 +21,13 @@ class HomeDetailPage extends StatelessWidget {
           overflowSpacing: 2,
           overflowDirection: VerticalDirection.down,
           children: [
-            "\$${item.price}".text.xl3.bold.make(),
+            Text(
+              "\$${item.price}",
+              style: TextStyle(
+                  color: context.cardColor,
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold),
+            ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppThemeData.darkBluishColor,
@@ -43,7 +49,7 @@ class HomeDetailPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
-      backgroundColor: AppThemeData.darkBluishColor,
+      backgroundColor: context.primaryColor,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -61,7 +67,7 @@ class HomeDetailPage extends StatelessWidget {
               child: Text(
                 item.name!,
                 style: TextStyle(
-                    color: Colors.white,
+                    color: context.cardColor,
                     fontSize: 26,
                     fontWeight: FontWeight.bold),
               ),
@@ -71,7 +77,7 @@ class HomeDetailPage extends StatelessWidget {
               child: Text(
                 item.desc,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: context.cardColor,
                 ),
               ),
             ),

@@ -27,9 +27,9 @@ class App extends StatelessWidget {
         AppRoutes.Cart: (context) => CartPage()
         // AppRoutes.Details:(context)=>const HomeDetailPage()
       },
-
+      themeMode: ThemeMode.light,
       theme: AppThemeData.lightTheme(context),
-
+      darkTheme: AppThemeData.DarkTheme(context),
       //  home:  Scaffold(
       //   appBar: AppBar(),
       //   body: Text("hello"),
