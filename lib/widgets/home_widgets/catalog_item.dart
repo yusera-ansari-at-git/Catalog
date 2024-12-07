@@ -16,7 +16,9 @@ class CatalogItem extends StatelessWidget {
     return VxBox(
         child: Row(
       children: [
-        CatalogImage(image: catalogItem.image),
+        Hero(
+            tag: Key(catalogItem.id.toString()),
+            child: CatalogImage(image: catalogItem.image)),
         CatalogContent(catalogItem: catalogItem)
       ],
     )).white.roundedLg.square(150).make().p12();
