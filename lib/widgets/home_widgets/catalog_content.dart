@@ -20,15 +20,11 @@ class CatalogContent extends StatelessWidget {
           catalogItem.desc.text.wrapWords(true).ellipsis.maxLines(3).make(),
           10.heightBox,
           OverflowBar(
-            spacing: 5,
             alignment: MainAxisAlignment.spaceBetween,
-            overflowAlignment: OverflowBarAlignment.end,
-            overflowSpacing: 2,
-            overflowDirection: VerticalDirection.down,
             children: [
-              "\$${catalogItem.price}".text.xl.bold.make(),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
+              "\$${catalogItem.price}".text.bold.make(),
+              TextButton(
+                style: TextButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(10),
@@ -36,7 +32,7 @@ class CatalogContent extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {},
-                child: "buy".text.make(),
+                child: "Add to cart".text.make(),
               )
             ],
           ).pOnly(right: 10)

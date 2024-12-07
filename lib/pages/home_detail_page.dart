@@ -33,14 +33,16 @@ class HomeDetailPage extends StatelessWidget {
               ),
               onPressed: () {},
               child: Text(
-                "buy",
+                "Add to cart",
                 style: TextStyle(color: Colors.white),
               ),
             )
           ],
         ).pOnly(right: 10),
       ),
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: AppThemeData.darkBluishColor,
       body: SafeArea(
         child: Column(

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:catalog_app/models/catalog.dart';
+import 'package:catalog_app/utils/app_routes.dart';
 import 'package:catalog_app/widgets/home_widgets/catalog_content.dart';
 import 'package:catalog_app/widgets/home_widgets/catalog_header.dart';
 import 'package:catalog_app/widgets/home_widgets/catalog_image.dart';
@@ -45,6 +46,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppThemeData.darkBluishColor,
+        onPressed: () {
+          Navigator.of(context).pushNamed(AppRoutes.Cart);
+        },
+        child: Icon(
+          Icons.shopping_cart,
+          color: Colors.white,
+        ),
+      ),
       backgroundColor: AppThemeData.creamColor,
       // appBar: AppBar(
       //   title: Text("Home"),
