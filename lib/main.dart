@@ -1,3 +1,4 @@
+import 'package:catalog_app/pages/home_detail_page.dart';
 import 'package:catalog_app/pages/home_page.dart';
 import 'package:catalog_app/pages/login_page.dart';
 import 'package:catalog_app/widgets/themes.dart';
@@ -21,7 +22,8 @@ class App extends StatelessWidget {
       routes: {
         "/": (context) => const LoginPage(),
         AppRoutes.Home: (context) => const HomePage(),
-        AppRoutes.Login: (context) => const LoginPage()
+        AppRoutes.Login: (context) => const LoginPage(),
+        // AppRoutes.Details:(context)=>const HomeDetailPage()
       },
 
       theme: AppThemeData.lightTheme(context),

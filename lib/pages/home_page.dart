@@ -1,6 +1,10 @@
 import 'dart:convert';
 
 import 'package:catalog_app/models/catalog.dart';
+import 'package:catalog_app/widgets/home_widgets/catalog_content.dart';
+import 'package:catalog_app/widgets/home_widgets/catalog_header.dart';
+import 'package:catalog_app/widgets/home_widgets/catalog_image.dart';
+import 'package:catalog_app/widgets/home_widgets/catalog_list_widget.dart';
 import 'package:catalog_app/widgets/drawer.dart';
 import 'package:catalog_app/widgets/item_widget.dart';
 import 'package:catalog_app/widgets/themes.dart';
@@ -47,7 +51,7 @@ class _HomePageState extends State<HomePage> {
       // ),
       body: SafeArea(
         child: Container(
-          padding: Vx.m32,
+          padding: Vx.m12,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -65,106 +69,6 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       drawer: const AppDrawer(),
-    );
-  }
-}
-
-class CatalogListWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return ListView.builder(
-      shrinkWrap: true,
-      itemBuilder: (context, index) {
-        return CatalogItem(
-          catalogItem: CatalogList.list![index],
-        );
-      },
-      itemCount: CatalogList.list!.length,
-    );
-  }
-}
-
-class CatalogItem extends StatelessWidget {
-  final Catalog catalogItem;
-  const CatalogItem({
-    super.key,
-    required this.catalogItem,
-  });
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return VxBox(
-        child: Row(
-      children: [
-        CatalogImage(image: catalogItem.image),
-        Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              catalogItem.name!.text.bold.lg
-                  .color(AppThemeData.darkBluishColor)
-                  .make(),
-              catalogItem.desc.text.wrapWords(true).ellipsis.maxLines(3).make(),
-              10.heightBox,
-              OverflowBar(
-                spacing: 5,
-                alignment: MainAxisAlignment.spaceBetween,
-                overflowAlignment: OverflowBarAlignment.end,
-                overflowSpacing: 2,
-                overflowDirection: VerticalDirection.down,
-                children: [
-                  "\$${catalogItem.price}".text.xl.bold.make(),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: "buy".text.make(),
-                  )
-                ],
-              ).pOnly(right: 10)
-            ],
-          ).p8(),
-        ),
-      ],
-    )).white.roundedLg.square(150).make().p16();
-  }
-}
-
-class CatalogImage extends StatelessWidget {
-  final String image;
-  const CatalogImage({super.key, required this.image});
-  @override
-  Widget build(BuildContext context) {
-    return Image.network(
-      image,
-    )
-        .box
-        .p8
-        .rounded
-        .color(AppThemeData.creamColor)
-        .make()
-        .p16()
-        .w40(context)
-        .h32(context);
-  }
-}
-
-class CatalogHeader extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        "Catalog App".text.xl5.color(AppThemeData.darkBluishColor).bold.make(),
-        "Trending Products".text.xl2.make()
-      ],
     );
   }
 }
